@@ -64,6 +64,7 @@ clean:
 
 fclean: clean
 	rm -f $(NAME) $(LIBFT_DEST) $(MLX_DEST)
+	make -C $(LIBFT) fclean
 	rm -f screenshot.bmp
 
 re: fclean all

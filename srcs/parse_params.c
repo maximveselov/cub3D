@@ -85,10 +85,18 @@ void	parse_rgb(char *src, int *dest, t_ptr *ptr)
 
 	tmp = ft_split(src, ' ');
 	rgb = ft_split(tmp[1], ',');
-	*dest = create_trgb(0, ft_atoi(rgb[0]), ft_atoi(rgb[1]), ft_atoi(rgb[2]));
+	if (rgb[0] && rgb[1] && rgb[2])
+		*dest = create_trgb(0, ft_atoi(rgb[0]), ft_atoi(rgb[1]),
+				ft_atoi(rgb[2]));
 	clear_map(tmp);
-	if (!rgb[0] || !rgb[1] || !rgb[2])
+	if (!rgb[0] || !rgb[1] || !rgb[2] || (ft_atoi(rgb[0]) < 0
+			|| ft_atoi(rgb[0]) > 255) || (ft_atoi(rgb[1]) < 0
+			|| ft_atoi(rgb[1]) > 255)
+		|| (ft_atoi(rgb[2]) < 0 || ft_atoi(rgb[2]) > 255))
+	{
+		clear_map(rgb);
 		exit_error_ptr(ptr, "Invalid color config");
+	}
 	clear_map(rgb);
 }
 

@@ -2,3 +2,4 @@
 *.swp
 *cmake*
 *.sh
+.idea
