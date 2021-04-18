@@ -242,4 +242,6 @@ void					free_arr_double(double **arr, int size);
 void					free_arr_int(int **arr, int size);
 void					free_ptr(t_ptr *ptr);
 int						check_file_format(char *file, char *format);
+void					check_wall_closure(t_ptr *ptr);
+void					check_borders(t_ptr *ptr);
 #endif

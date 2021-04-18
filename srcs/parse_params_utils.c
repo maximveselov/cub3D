@@ -12,32 +12,6 @@
 
 #include "cub3d.h"
 
-void	check_map(t_ptr *ptr)
-{
-	char	**tmp;
-	int		i;
-	int		j;
-
-	tmp = ptr->conf.pmap;
-	i = 0;
-	while (tmp[i])
-	{
-		j = 0;
-		while (tmp[i][j])
-		{
-			if ((tmp[i][j] != '1' && tmp[i][j] != '0' && tmp[i][j] != 'N'
-			&& tmp[i][j] != ' ' && tmp[i][j] != 'W' && tmp[i][j] != 'E'
-			&& tmp[i][j] != 'S' && tmp[i][j] != '2') || ((tmp[i][j] == 0
-			&& (tmp[i - 1][j] && tmp[i - 1][j] != '1') && (tmp[i + 1][j]
-			&& tmp[i + 1][j] != '1') && (tmp[i][j - 1] && tmp[i][j - 1]
-			!= '1') && (tmp[i][j + 1] && tmp[i][j + 1] != '1'))))
-				exit_error_ptr(ptr, "Invalid map config");
-			j++;
-		}
-		i++;
-	}
-}
-
 void	get_plr_info(t_ptr *ptr, int x, int y, char dir)
 {
 	ptr->plr.x = (float)x + 0.5;

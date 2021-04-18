@@ -39,7 +39,8 @@ FILES = cub3d.c \
 			sprites.c \
 			sprites_utils.c \
 			wall_cast.c \
-			wall_cast_utils.c
+			wall_cast_utils.c \
+			check_walls.c
 
 SRCS_DIR = srcs
 
